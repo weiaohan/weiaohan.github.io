@@ -13,11 +13,11 @@
 
     <title>
         
-          魏傲寒的博客 | Wei Aohan&#39;s Blog
+          CSS选择器,posion属性 - 魏傲寒的博客 | Wei Aohan&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://weiaohan.github.io/">
+    <link rel="canonical" href="http://weiaohan.github.io/2016/11/17/CSS选择器-posion属性/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -147,279 +147,146 @@
 
 
     <!-- Main Content -->
-    <!-- Page Header -->
-<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
+    
+<!-- Image to hack wechat -->
+<!-- <img src="http://weiaohan.github.io/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
+
+<!-- Post Header -->
+<style type="text/css">
+    header.intro-header{
+        background-image: url('/img/home-bg.jpg')
+    }
+</style>
+<header class="intro-header" >
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
-                <div class="site-heading">
-                    <h1>Wei Aohan&#39;s Blog</h1>
-                    <!--<hr class="small">-->
-                    <span class="subheading">你的问题在于书读得不多，想得太多</span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+                <div class="post-heading">
+                    <div class="tags">
+                        
+                          <a class="tag" href="/tags/#学习笔记" title="学习笔记">学习笔记</a>
+                        
+                          <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
+                        
+                    </div>
+                    <h1>CSS选择器,posion属性</h1>
+                    <h2 class="subheading">针对基础的CSS选择器以及position属性进行详解</h2>
+                    <span class="meta">
+                        Posted by 魏傲寒 on
+                        2016-11-17
+                    </span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
+<!-- Post Content -->
+<article>
+    <div class="container">
+        <div class="row">
 
-
-<!-- Main Content -->
-<div class="container">
-    <div class="row">
-        
-
-<!-- USE SIDEBAR -->
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-1
-                col-md-8 col-md-offset-1
-                col-sm-12
-                col-xs-12
-                post-container
-            ">
-            
-                <!-- Main Content -->
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                post-container">
+
+                <h2 id="CSS选择器"><a href="#CSS选择器" class="headerlink" title="CSS选择器"></a>CSS选择器</h2><ol>
+<li>* 通用选择器</li>
+</ol>
+<figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line">* &#123; <span class="attribute">margin</span>: <span class="number">0</span>; <span class="attribute">padding</span>: <span class="number">0</span>; &#125;</div></pre></td></tr></table></figure>
+<p>* 选择器是选择页面上的全部元素，上面的代码作用是把全部元素的margin和padding设为0，最基本的清除默认CSS样式。</p>
+<p>有可应用到子元素选择器上，比如</p>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">#footer *</div><div class="line">&#123;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p>则表示选中了id为footer中的所有子元素。</p>
+<ol>
+<li>#ID:ID选择器</li>
+</ol>
+<p>就是用#索引。ID选择器是CSS中效率最高的选择器，使用的时候注意保证ID的唯一性。</p>
+<ol>
+<li>.class:类选择器</li>
+</ol>
+<p>使用. 进行索引，类选择器命名可以重复，还可以匹配类名，比如我们有几个类</p>
+<figure class="highlight cs"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">class</span>=<span class="string">"con container1"</span></div><div class="line"><span class="keyword">class</span>=<span class="string">"con container2"</span></div><div class="line"><span class="keyword">class</span>=<span class="string">"con container3"</span></div></pre></td></tr></table></figure>
+<p>使用<br><figure class="highlight asciidoc"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="title">.con&#123;</span></div><div class="line"><span class="code">    ...  </span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>即可选中三个类。</p>
+<ol>
+<li>X，Y：多元素选择器</li>
+</ol>
+<p>同时匹配所有X或Y元素，用，隔开</p>
+<figure class="highlight brainfuck"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="comment">li，a&#123;</span></div><div class="line">  <span class="string">.</span><span class="string">.</span><span class="string">.</span></div><div class="line">  <span class="comment">&#125;</span></div></pre></td></tr></table></figure>
+<ol>
+<li>X Y: 后代元素选择器</li>
+</ol>
+<p>匹配所有X元素后代的Y元素，用空格分隔</p>
+<figure class="highlight stylus"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">li</span> a&#123;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>X&gt;Y： 子元素选择器</li>
+</ol>
+<p>匹配X元素的所有Y元素子元素</p>
+<figure class="highlight ada"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">body</span>&gt;li&#123;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<p><strong><em>css选择器中后代选择器与子选择器的区别</em></strong><br><strong><em>后代选择器：就是对象当中所有的子元素，孙子元素以及最底层的元素</em></strong></p>
+<p><strong><em>子选择器：就单单是子元素，子元素的子元素就不算了</em></strong></p>
+<ol>
+<li>X+Y:匹配所有紧随X元素之后的同级元素Y</li>
+</ol>
+<figure class="highlight clean"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">p+p&#123;</div><div class="line">  ...</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+<ol>
+<li>E[att]:匹配所有具有att属性的E元素，不考虑它的值。（注意：E在此处可以省略，比如“[cheacked]”。以下属性选择器同。）</li>
+</ol>
 
 
-<div class="post-preview">
+                <hr>
 
-    <a href="/2016/11/17/CSS选择器-posion属性/">
-        <h2 class="post-title">
-            CSS选择器,posion属性
-        </h2>
-        <h3 class="post-subtitle">
-            针对基础的CSS选择器以及position属性进行详解
-        </h3>
-        <div class="post-content-preview">
-            CSS选择器
-* 通用选择器
+                
 
-1* &#123; margin: 0; padding: 0; &#125;
-* 选择器是选择页面上的全部元素，上面的代码作用是把全部元素的margin和padding设为0，最基本的清除默认CSS样式。
-有可应用到子元素选择器上，比如
-1234#footer *&#123;  ...&#125;
-则表示选中了id为footer中的所有子元素。
+                <ul class="pager">
+                    
+                    
+                        <li class="next">
+                            <a href="/2016/11/17/深信服部分面试题/" data-toggle="tooltip" data-placement="top" title="深信服部分面试题">Next Post &rarr;</a>
+                        </li>
+                    
+                </ul>
 
-#ID:I......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by 魏傲寒 on
-        2016-11-17
-    </p>
+                
 
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/11/17/深信服部分面试题/">
-        <h2 class="post-title">
-            深信服部分面试题
-        </h2>
-        <h3 class="post-subtitle">
-            
-        </h3>
-        <div class="post-content-preview">
-            深信服部分面试题
-
--指针在内存里占多少个字节？
-指针即为地址，指针几个字节跟语言无关，而是跟系统的寻址能力有关，譬如以前是16为地址，指针即为2个字节，现在一般是32位系统，所以是4个字节，以后64位，则就为8个字节。
-
-
-
-什么是野指针？
-指向不确定地址的指针变量。（即没有初始化）使用野指针易因内存泄露出现段错误。
-
-
-
-extern的作用
-extern可置于变量或者函数前，以表示变量或......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by 魏傲寒 on
-        2016-11-17
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2016/11/15/IMAPOST/">
-        <h2 class="post-title">
-            何必去抱怨生活
-        </h2>
-        <h3 class="post-subtitle">
-            "我们觉得痛苦是因为我们没有经历真正的痛苦"
-        </h3>
-        <div class="post-content-preview">
-            
-“我们只要把门打开一条小缝，阳光就会照进来。”
-
-就这么开始了不知不觉因为一些奇奇怪怪的原因搭了这个博客，或许是很久以前的想法突然钻了出来，在班长大人的帮助之下，它，就这么出现了。
-我想在这个博客里记录自己的点点滴滴，不仅是学习、技术上的，更希望这个博客能见证我的失败、成长。
-正文大三开始的时候还没什么想法，觉得不过又是大学新的一年，但随着放弃考研的想法，找实习这一大难题一下就跑到了我的面......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by 魏傲寒 on
-        2016-11-15
-    </p>
-
-</div>
-<hr>
-
-<div class="post-preview">
-
-    <a href="/2014/01/29/hello-2015/">
-        <h2 class="post-title">
-            Welcome to Hux Blog
-        </h2>
-        <h3 class="post-subtitle">
-             "Hello World, Hello Blog"
-        </h3>
-        <div class="post-content-preview">
-            
-“Yeah It’s on. ”
-
-前言Hux 的 Blog 就这么开通了。
-跳过废话，直接看技术实现 
-2015 年，Hux 总算有个地方可以好好写点东西了。
-作为一个程序员， Blog 这种轮子要是挂在大众博客程序上就太没意思了。一是觉得大部分 Blog 服务都太丑，二是觉得不能随便定制不好玩。之前因为太懒没有折腾，结果就一直连个写 Blog 的地儿都没有。
-在玩了一段时间知乎之后，答......
-        </div>
-    </a>
-    <p class="post-meta">
-        Posted by Hux on
-        2014-01-29
-    </p>
-
-</div>
-<hr>
-
-
-
-<!-- Pager -->
-
-<ul class="pager">
-    
-    
-</ul>
-
-
-
-                <!-- 如果开启评论功能 -->
+                
+                <!-- disqus 评论框 start -->
+                <div class="comment">
+                    <div id="disqus_thread" class="disqus-thread"></div>
+                </div>
+                <!-- disqus 评论框 end -->
                 
 
             </div>
+    <!-- Side Catalog Container -->
+        
+
     <!-- Sidebar Container -->
+
             <div class="
-                col-lg-3 col-lg-offset-0
-                col-md-3 col-md-offset-0
-                col-sm-12
-                col-xs-12
-                sidebar-container
-            ">
+                col-lg-8 col-lg-offset-2
+                col-md-10 col-md-offset-1
+                sidebar-container">
+
                 <!-- Featured Tags -->
                 
                 <section>
                     <!-- no hr -->
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
+                       
+                          <a class="tag" href="/tags/#学习笔记" title="学习笔记">学习笔记</a>
                         
-                            
-                        
-                            
-                        
-                            
-                            <a href="/tags/#生活" title="生活" rel="2">生活</a>
-                            
-                        
-                            
+                          <a class="tag" href="/tags/#CSS" title="CSS">CSS</a>
                         
                     </div>
                 </section>
                 
 
-                <!-- Short About -->
-                <section class="visible-md visible-lg">
-                    <hr><h5><a href="/about/">ABOUT ME</a></h5>
-                    <div class="short-about">
-
-                        
-                            <img src="/img/gf.jpg" />
-                        
-
-                        
-                            <p>如果你觉得你忘记了什么，那你一定忘记了什么。</p>
-                        
-
-                        <!-- SNS Link -->
-                        <ul class="list-inline">
-                            
-                            
-                                <li>
-                                    <a target="_blank" href="https://twitter.com/WeiAohan">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                            
-                                <li>
-                                    <a target="_blank" href="https://www.zhihu.com/people/kou-ge-41">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-                                <li>
-                                    <a target="_blank" href="http://weibo.com/5450613880">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-                                <li>
-                                    <a target="_blank" href="https://www.facebook.com/weiaohan.cn">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-
-                            
-                                <li>
-                                    <a target="_blank"  href="https://github.com/weiaohan">
-                                        <span class="fa-stack fa-lg">
-                                            <i class="fa fa-circle fa-stack-2x"></i>
-                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
-                                        </span>
-                                    </a>
-                                </li>
-                            
-                            
-                            
-                            
-                        </ul>
-                    </div>
-                </section>
-                
                 <!-- Friends Blog -->
                 
                 <hr>
@@ -442,9 +309,66 @@ extern可置于变量或者函数前，以表示变量或......
                 </ul>
                 
             </div>
-        
+
+        </div>
     </div>
-</div>
+</article>
+
+
+
+
+<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+<script type="text/javascript">
+    /* * * CONFIGURATION VARIABLES * * */
+    var disqus_shortname = "hexo-theme-huxblog";
+    var disqus_identifier = "http://weiaohan.github.io/2016/11/17/CSS选择器-posion属性/";
+    var disqus_url = "http://weiaohan.github.io/2016/11/17/CSS选择器-posion属性/";
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+</script>
+<!-- disqus 公共JS代码 end -->
+
+
+
+
+<!-- async load function -->
+<script>
+    function async(u, c) {
+      var d = document, t = 'script',
+          o = d.createElement(t),
+          s = d.getElementsByTagName(t)[0];
+      o.src = u;
+      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
+      s.parentNode.insertBefore(o, s);
+    }
+</script>
+<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
+<script>
+    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
+        anchors.options = {
+          visible: 'always',
+          placement: 'right',
+          icon: '#'
+        };
+        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
+    })
+</script>
+<style>
+    /* place left on bigger screen */
+    @media all and (min-width: 800px) {
+        .anchorjs-link{
+            position: absolute;
+            left: -0.75em;
+            font-size: 1.1em;
+            margin-top : -0.1em;
+        }
+    }
+</style>
+
 
 
     <!-- Footer -->
