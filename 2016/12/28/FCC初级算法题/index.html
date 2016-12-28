@@ -13,11 +13,11 @@
 
     <title>
         
-          要给世界留下点什么 - 魏傲寒的博客 | Wei Aohan&#39;s Blog
+          FCC初级算法题 - 魏傲寒的博客 | Wei Aohan&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://weiaohan.github.io/2016/12/22/要给世界留下点什么/">
+    <link rel="canonical" href="http://weiaohan.github.io/2016/12/28/FCC初级算法题/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -155,7 +155,7 @@
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        background-image: url('2016-12-23.jpg')
+        background-image: url('/img/home-bg.jpg')
     }
 </style>
 <header class="intro-header" >
@@ -165,14 +165,14 @@
                 <div class="post-heading">
                     <div class="tags">
                         
-                          <a class="tag" href="/tags/#生活" title="生活">生活</a>
+                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
                         
                     </div>
-                    <h1>要给世界留下点什么</h1>
-                    <h2 class="subheading">人终有一死，到最后我们留下了什么。</h2>
+                    <h1>FCC初级算法题</h1>
+                    <h2 class="subheading">FCC初级算法题</h2>
                     <span class="meta">
                         Posted by 魏傲寒 on
-                        2016-12-22
+                        2016-12-28
                     </span>
                 </div>
             </div>
@@ -191,18 +191,32 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <p>今天刚刚考完科目三，刚想给家里人报喜，才说完“妈吗我考过了”，我妈就叫我马上买回家的车票，心里一下就有了不好的感觉。</p>
-<p><em>祖母去世了</em></p>
-<p>消息来得很突然，也谈不上很震惊，因为祖母已经九十四岁高龄了，而且最近几个月祖母记性越来越差，已经不知道我是谁了，就像父亲葬礼完后给我说的，这应该是一件“喜事”。虽然一年只能见几次面，总共也没说过几句话，每次也就看望问候一下，但是有一次经历却让我很感动，也很心酸，每次想起，都会不禁心颤。</p>
-<p>那次我和奶奶一起把祖母送到一位亲戚家去生活一段时间，一起唠嗑寒暄了几句，然后我们就准备离开了，拗不住祖母执意要送我们，最后送到了有铁栅栏的大门，我奶奶往系在祖母脖子上的钱包塞了两百块钱，悄悄给她说“这是给你的零花钱”，然后我们就一起走出了被铁栅栏包裹住的大门。都已经走了大约一百多米了，我不经意回头一看，发现祖母正双手握着铁栏杆看着我们，不知道是不是我眼花了，我似乎看见祖母眼里噙着泪水，满眼尽是不舍。奶奶一个劲的比手势叫她快回去了，她还是一动不动那样望着我们，那时我眼里泛起了泪花。</p>
-<p>作揖、烧香、烧钱纸、葬礼，一切都井然有序的完成了。在葬礼时，我望着祖母躺着的棺材，一时出了神。</p>
-<p><strong>我们所追求的、所爱的，在我们去世以后，还有什么意义呢，我给这个世界留下的又有什么了。</strong></p>
-<p>或许有人会说我们活着就是一个过程，这个过程是最重要的，结果都是一死，所以结果并不重要。但是当我们去世时，我们对于过程的感悟也就成了过眼云烟。</p>
-<p>我们想做什么，就勇敢去做，不要留有遗憾，这也是我们首先追求的。但是我还是想为这个世界留下点属于自己的东西，或许我不能对人类的进步做出卓越的贡献，但是我能给我爱的人感受到我的爱，这或许就让我的爱留在了这个世界上。</p>
-<p>当然，我还是想写一本书，能够永远的让自己的思想存在于世，我不奢求这本书能够让人名声大噪，也不奢求能够流行于世，我只是想让我的思想能够安静的存在于这世界的一隅。</p>
-<blockquote>
-<p>我希望祖母在天堂能够过得很好。</p>
-</blockquote>
+                <ol>
+<li><p><strong>Reverse a String</strong></p>
+<p>翻转字符串</p>
+<p>先把字符串转化成数组，再借助数组的reverse方法翻转数组顺序，最后把数组转化成字符串。</p>
+<p>你的结果必须得是一个字符串</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">  <span class="function"><span class="keyword">function</span> <span class="title">reverseString</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">  str=str.split(<span class="string">''</span>);</div><div class="line">  str.reverse();</div><div class="line">  str=str.join(<span class="string">""</span>);</div><div class="line">  <span class="keyword">return</span> str;</div><div class="line">&#125;</div><div class="line">  reverseString(<span class="string">"hello"</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Factorialize a Number</strong></p>
+<p>计算一个整数的阶乘</p>
+<p>如果用字母n来代表一个整数，阶乘代表着所有小于或等于n的整数的乘积。</p>
+<p>阶乘通常简写成 n!</p>
+<p>例如: 5! = 1 <em> 2 </em> 3 <em> 4 </em> 5 = 120</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">factorialize</span>(<span class="params">num</span>) </span>&#123;</div><div class="line"><span class="keyword">if</span>(num===<span class="number">0</span>)&#123;</div><div class="line"><span class="keyword">return</span> <span class="number">1</span>;</div><div class="line">&#125;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=num<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--)&#123;</div><div class="line">num*=i;</div><div class="line">&#125;</div><div class="line"><span class="keyword">return</span> num;</div><div class="line">&#125;</div><div class="line"></div><div class="line">factorialize(<span class="number">5</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Check for Palindromes</strong><br>如果给定的字符串是回文，返回true，反之，返回false。</p>
+<p>如果一个字符串忽略标点符号、大小写和空格，正着读和反着读一模一样，那么这个字符串就是palindrome(回文)。</p>
+<p>注意你需要去掉字符串多余的标点符号和空格，然后把字符串转化成小写来验证此字符串是否为回文。</p>
+<p>函数参数的值可以为”racecar”，”RaceCar”和”race CAR”。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div><div class="line">13</div><div class="line">14</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">palindrome</span>(<span class="params">str</span>) </span>&#123;</div><div class="line"><span class="keyword">var</span> newStr=str.replace(<span class="regexp">/[\ |\~|\`|\!|\@|\#|\$|\%|\^|\&amp;|\*|\(|\)|\-|\_|\+|\=|\||\\|\[|\]|\&#123;|\&#125;|\;|\:|\"|\'|\,|\&lt;|\.|\&gt;|\/|\?]/g</span>,<span class="string">''</span>);</div><div class="line"><span class="keyword">var</span> revStr=newStr.split(<span class="string">''</span>);</div><div class="line">revStr.reverse();</div><div class="line">revStr=revStr.join(<span class="string">''</span>);</div><div class="line"><span class="keyword">if</span>(revStr.toLowerCase()===newStr.toLowerCase())</div><div class="line">&#123;</div><div class="line"><span class="keyword">return</span> <span class="literal">true</span>;</div><div class="line">&#125;<span class="keyword">else</span>&#123;</div><div class="line">  <span class="keyword">return</span> <span class="literal">false</span>;</div><div class="line">&#125;</div><div class="line">&#125;</div><div class="line"></div><div class="line">palindrome(<span class="string">"eye"</span>);</div></pre></td></tr></table></figure>
+</li>
+<li><p><strong>Find the Longest Word in a String</strong></p>
+<p>找到提供的句子中最长的单词，并计算它的长度。</p>
+<p>函数的返回值应该是一个数字。</p>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div><div class="line">11</div><div class="line">12</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">findLongestWord</span>(<span class="params">str</span>) </span>&#123;</div><div class="line">str=str.split(<span class="string">' '</span>);</div><div class="line"><span class="keyword">var</span> max=<span class="number">0</span>;</div><div class="line"><span class="keyword">for</span>(<span class="keyword">var</span> i=<span class="number">0</span>;i&lt;str.length;i++)&#123;</div><div class="line">  <span class="keyword">if</span>(str[i].length&gt;max)&#123;</div><div class="line">    max=str[i].length;</div><div class="line">  &#125;</div><div class="line">&#125;</div><div class="line"><span class="keyword">return</span> max;</div><div class="line">&#125;</div><div class="line"></div><div class="line">findLongestWord(<span class="string">"The quick brown fox jumped over the lazy dog"</span>);</div></pre></td></tr></table></figure>
+</li>
+</ol>
 
 
                 <hr>
@@ -211,13 +225,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2016/12/28/FCC初级算法题/" data-toggle="tooltip" data-placement="top" title="FCC初级算法题">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2016/11/24/真是啥也做不好/" data-toggle="tooltip" data-placement="top" title="真是啥也做不好吗？">Next Post &rarr;</a>
+                            <a href="/2016/12/22/要给世界留下点什么/" data-toggle="tooltip" data-placement="top" title="要给世界留下点什么">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -250,7 +260,7 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
-                          <a class="tag" href="/tags/#生活" title="生活">生活</a>
+                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
                         
                     </div>
                 </section>
@@ -290,8 +300,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "hexo-theme-huxblog";
-    var disqus_identifier = "http://weiaohan.github.io/2016/12/22/要给世界留下点什么/";
-    var disqus_url = "http://weiaohan.github.io/2016/12/22/要给世界留下点什么/";
+    var disqus_identifier = "http://weiaohan.github.io/2016/12/28/FCC初级算法题/";
+    var disqus_url = "http://weiaohan.github.io/2016/12/28/FCC初级算法题/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
