@@ -15,11 +15,11 @@
 
     <title>
         
-          js学习笔记（一） - 魏傲寒的博客 | Wei Aohan&#39;s Blog
+          魏傲寒的博客 | Wei Aohan&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://weiaohan.top/2017/04/18/js学习笔记（一）/">
+    <link rel="canonical" href="http://weiaohan.top/baidu_verify_D3Chx6GFUE.html">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -152,147 +152,195 @@
 
 
     <!-- Main Content -->
-    
-<!-- Image to hack wechat -->
-<!-- <img src="http://weiaohan.top/img/icon_wechat.png" width="0" height="0"> -->
-<!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
-
-<!-- Post Header -->
-<style type="text/css">
-    header.intro-header{
-        background-image: url('post-bg-js-version.jpg')
-    }
-</style>
-<header class="intro-header" >
+    <!-- Page Header -->
+<header class="intro-header" style="background-image: url('/img/home-bg.jpg')">
     <div class="container">
         <div class="row">
-            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
-                <div class="post-heading">
-                    <div class="tags">
-                        
-                          <a class="tag" href="/tags/#学习笔记" title="学习笔记">学习笔记</a>
-                        
-                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
-                        
-                    </div>
-                    <h1>js学习笔记（一）</h1>
-                    <h2 class="subheading"></h2>
-                    <span class="meta">
-                        Posted by 魏傲寒 on
-                        2017-04-18
-                    </span>
+            <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1 ">
+                <div class="site-heading">
+                    <h1>Wei Aohan&#39;s Blog</h1>
+                    <!--<hr class="small">-->
+                    <span class="subheading">你的问题在于书读得不多，想得太多（评论系统用的disqus，最近被墙了，所以需要翻墙才能评论orz）</span>
                 </div>
             </div>
         </div>
     </div>
 </header>
 
-<!-- Post Content -->
-<article>
-    <div class="container">
-        <div class="row">
 
+
+<!-- Main Content -->
+<div class="container">
+    <div class="row">
+        
+
+<!-- USE SIDEBAR -->
     <!-- Post Container -->
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                post-container">
+                col-lg-8 col-lg-offset-1
+                col-md-8 col-md-offset-1
+                col-sm-12
+                col-xs-12
+                post-container
+            ">
 
-                <h3 id="写在之前"><a href="#写在之前" class="headerlink" title="写在之前"></a>写在之前</h3><p>之前用jQuery写了一些简单地交互，但是能说是功能实现了，要想真正进入前端开发，以后能有所作为，js很重要，所以必须要认真学习。听闻入门必须啃下两本书，所以觉得肯定会很困难，所以决定开始写学习笔记，算是一种记录，也算是一种激励。</p>
-<p>本笔记基于《JavaScript高级程序设计（第三版）》，是对学习过程中觉得比较重要的或者不太清楚的地方的描述加记录。</p>
-<hr>
-<h2 id="第一章-JavaScript简介"><a href="#第一章-JavaScript简介" class="headerlink" title="第一章 JavaScript简介"></a>第一章 JavaScript简介</h2><p>一个完整的JavaScript是指：</p>
-<ul>
-<li>核心（ECMAScript）</li>
-<li>文档对象模型（DOM）</li>
-<li>浏览器对象模型（BOM）</li>
-</ul>
-<h3 id="1、ECMAScript"><a href="#1、ECMAScript" class="headerlink" title="1、ECMAScript"></a>1、ECMAScript</h3><p>由ECMA-262定义的ECMAScript与Web浏览器没有依赖关系。实际上，这门语言本身并不包含输入和输出定义。</p>
-<p>我们常见的Web浏览器只是ECMAScript实现的可能的宿主环境之一。宿主环境能够提供ECMAScript的基本实现，也能对其进行扩展，如DOM，则利用ECMAScript的核心类型和语法提供更多的具体功能。其他宿主环境：node、Adobe flash。</p>
-<p>ECMA-262规定了这门语言的组成部分：</p>
-<ul>
-<li>语法</li>
-<li>类型</li>
-<li>语句</li>
-<li>关键字</li>
-<li>保留字</li>
-<li>操作符</li>
-<li>对象</li>
-</ul>
-<h3 id="2、文档对象模型（DOM）"><a href="#2、文档对象模型（DOM）" class="headerlink" title="2、文档对象模型（DOM）"></a>2、文档对象模型（DOM）</h3><p>DOM把整个页面映射为一个多层节点结构。HTML或XML页面中的每个组成部分都是某种类型的节点，这些节点又包含不同的类型数据。</p>
-<h4 id="2-1-DOM级别"><a href="#2-1-DOM级别" class="headerlink" title="2.1 DOM级别"></a>2.1 DOM级别</h4><p>DOM1级，由两个模块组成：DOM核心（DOM Core）和DOM HTML。DOM核心规定如何映射基于XML的文档结构。DOM HTML在DOM核心上加以扩展，添加了针对HTML的对象和方法。</p>
-<p>DOM2级在原来的基础上扩充了鼠标和用户界面事件、范围、遍历等细分模块。增加了对CSS的支持。<br>DOM2级引入了下面新模块：</p>
-<ul>
-<li>DOM视图（DOM Views）：定义了跟踪不同文档（例如，应用CSS之前和之后的文档）视图的接口。</li>
-<li>DOM事件（DOM Events）：定义了事件和事件处理接口。</li>
-<li>DOM样式（DOM Styles）：定义了基于CSS为元素应用样式的接口。</li>
-<li>DOM遍历和范围（DOM Traversal and Range）：定义了遍历和操作文档树的接口。</li>
-</ul>
-<p>DOM3级进一步扩展了DOM，引入了同一方式加载和保存文档的方法——在DOM加载和保存（DOM Load and Save）模块中定义：新增了验证文档的方法——在DOM验证（DOM Validation） 模块中定义。</p>
-<h3 id="3-浏览器对象模型（BOM）"><a href="#3-浏览器对象模型（BOM）" class="headerlink" title="3.浏览器对象模型（BOM）"></a>3.浏览器对象模型（BOM）</h3><p>使用BOM可以控制浏览器显示的页面以外的部分。人们习惯上也把所有针对浏览器的JavaScript扩展所做BOM的一部分：</p>
-<ul>
-<li>弹出新浏览器窗口。</li>
-<li>移动、缩放和关闭浏览器窗口。</li>
-<li>提供浏览器详细信息的navigator对象。</li>
-<li>提供浏览器加载页面的详细信息的location对象。</li>
-<li>提供用户显示器分辨率详细信息的screen对象。</li>
-<li>对cookie的支持。</li>
-<li>像XMLHttpRequest和IE的ActiveXObject这样的自定义对象。</li>
-</ul>
+                D3Chx6GFUE
 
-
-                <hr>
-
+                <!-- 如果开启评论功能 -->
                 
+                    <hr>
 
-                <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2017/04/18/js学习笔记（二）/" data-toggle="tooltip" data-placement="top" title="js学习笔记（二）">&larr; Previous Post</a>
-                        </li>
-                    
-                    
-                        <li class="next">
-                            <a href="/2017/04/17/炉石传说-安戈洛心得/" data-toggle="tooltip" data-placement="top" title="炉石传说--安戈洛心得">Next Post &rarr;</a>
-                        </li>
-                    
-                </ul>
 
-                
+                    
+                    <!-- disqus 评论框 start -->
+                    <div class="comment">
+                        <div id="disqus_thread" class="disqus-thread"></div>
+                    </div>
+                    <!-- disqus 评论框 end -->
+                    
 
-                
-                <!-- disqus 评论框 start -->
-                <div class="comment">
-                    <div id="disqus_thread" class="disqus-thread"></div>
-                </div>
-                <!-- disqus 评论框 end -->
+
+                    
+
+                    
+                    <!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
+                    <script type="text/javascript">
+                        /* * * CONFIGURATION VARIABLES * * */
+                        var disqus_shortname = "hexo-theme-huxblog";
+                        var disqus_identifier = "http://weiaohan.top/baidu_verify_D3Chx6GFUE.html";
+                        var disqus_url = "http://weiaohan.top/baidu_verify_D3Chx6GFUE.html";
+
+                        (function() {
+                            var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+                            dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+                            (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+                        })();
+
+
+                    </script>
+                    <!-- disqus 公共JS代码 end -->
+                    
+
+
+
                 
 
             </div>
-    <!-- Side Catalog Container -->
-        
-
     <!-- Sidebar Container -->
-
             <div class="
-                col-lg-8 col-lg-offset-2
-                col-md-10 col-md-offset-1
-                sidebar-container">
-
+                col-lg-3 col-lg-offset-0
+                col-md-3 col-md-offset-0
+                col-sm-12
+                col-xs-12
+                sidebar-container
+            ">
                 <!-- Featured Tags -->
                 
                 <section>
                     <!-- no hr -->
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
-                       
-                          <a class="tag" href="/tags/#学习笔记" title="学习笔记">学习笔记</a>
                         
-                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                            
+                            <a href="/tags/#学习笔记" title="学习笔记" rel="4">学习笔记</a>
+                            
+                        
+                            
+                        
+                            
+                            <a href="/tags/#JavaScript" title="JavaScript" rel="4">JavaScript</a>
+                            
+                        
+                            
+                            <a href="/tags/#生活" title="生活" rel="4">生活</a>
+                            
+                        
+                            
+                        
+                            
+                        
+                            
                         
                     </div>
                 </section>
                 
+
+                <!-- Short About -->
+                <section class="visible-md visible-lg">
+                    <hr><h5><a href="/about/">ABOUT ME(图片当然是女朋友)</a></h5>
+                    <div class="short-about">
+
+                        
+                            <img src="/img/gf.jpg" />
+                        
+
+                        
+                            <p>如果你觉得你忘记了什么，那你一定忘记了什么。我的联系方式：QQ380629654</p>
+                        
+
+                        <!-- SNS Link -->
+                        <ul class="list-inline">
+                            
+                            
+                                <li>
+                                    <a target="_blank" href="https://twitter.com/WeiAohan">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+                            
+                                <li>
+                                    <a target="_blank" href="https://www.zhihu.com/people/kou-ge-41">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa  fa-stack-1x fa-inverse">知</i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+
+                            
+                                <li>
+                                    <a target="_blank" href="http://weibo.com/5450613880">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-weibo fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+
+                            
+                                <li>
+                                    <a target="_blank" href="https://www.facebook.com/weiaohan.cn">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+
+                            
+                                <li>
+                                    <a target="_blank"  href="https://github.com/weiaohan">
+                                        <span class="fa-stack fa-lg">
+                                            <i class="fa fa-circle fa-stack-2x"></i>
+                                            <i class="fa fa-github fa-stack-1x fa-inverse"></i>
+                                        </span>
+                                    </a>
+                                </li>
+                            
+
+
+                            
+                        </ul>
+                    </div>
+                </section>
 
                 <!-- Friends Blog -->
                 
@@ -312,66 +360,9 @@
                 </ul>
                 
             </div>
-
-        </div>
+        
     </div>
-</article>
-
-
-
-
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "hexo-theme-huxblog";
-    var disqus_identifier = "http://weiaohan.top/2017/04/18/js学习笔记（一）/";
-    var disqus_url = "http://weiaohan.top/2017/04/18/js学习笔记（一）/";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus 公共JS代码 end -->
-
-
-
-
-<!-- async load function -->
-<script>
-    function async(u, c) {
-      var d = document, t = 'script',
-          o = d.createElement(t),
-          s = d.getElementsByTagName(t)[0];
-      o.src = u;
-      if (c) { o.addEventListener('load', function (e) { c(null, e); }, false); }
-      s.parentNode.insertBefore(o, s);
-    }
-</script>
-<!-- anchor-js, Doc:http://bryanbraun.github.io/anchorjs/ -->
-<script>
-    async("http://cdn.bootcss.com/anchor-js/1.1.1/anchor.min.js",function(){
-        anchors.options = {
-          visible: 'always',
-          placement: 'right',
-          icon: '#'
-        };
-        anchors.add().remove('.intro-header h1').remove('.subheading').remove('.sidebar-container h5');
-    })
-</script>
-<style>
-    /* place left on bigger screen */
-    @media all and (min-width: 800px) {
-        .anchorjs-link{
-            position: absolute;
-            left: -0.75em;
-            font-size: 1.1em;
-            margin-top : -0.1em;
-        }
-    }
-</style>
-
+</div>
 
 
     <!-- Footer -->
