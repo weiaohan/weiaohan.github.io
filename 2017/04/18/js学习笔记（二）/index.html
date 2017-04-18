@@ -6,6 +6,8 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="google-site-verification" content="xBT4GhYoi5qRD5tr338pgPM5OWHHIDR6mNg1a3euekI" />
+    <meta name="google-site-verification" content="x0nyeCP5k7yQa5XYJ_AqjwZlAtSIIDYoWXnhb1OghCU" />
+    <meta name="baidu-site-verification" content="ylY4PheJar" />
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="keyword"  content="">
@@ -13,11 +15,11 @@
 
     <title>
         
-          魏傲寒的博客 | Wei Aohan&#39;s Blog
+          js学习笔记（二） - 魏傲寒的博客 | Wei Aohan&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://weiaohan.github.io/2016/12/29/baidu_verify_9eVjaB4a1U/">
+    <link rel="canonical" href="http://weiaohan.top/2017/04/18/js学习笔记（二）/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -149,13 +151,13 @@
     <!-- Main Content -->
     
 <!-- Image to hack wechat -->
-<!-- <img src="http://weiaohan.github.io/img/icon_wechat.png" width="0" height="0"> -->
+<!-- <img src="http://weiaohan.top/img/icon_wechat.png" width="0" height="0"> -->
 <!-- <img src="{{ site.baseurl }}/{% if page.header-img %}{{ page.header-img }}{% else %}{{ site.header-img }}{% endif %}" width="0" height="0"> -->
 
 <!-- Post Header -->
 <style type="text/css">
     header.intro-header{
-        background-image: url('/img/home-bg.jpg')
+        background-image: url('post-bg-js-version.jpg')
     }
 </style>
 <header class="intro-header" >
@@ -165,12 +167,16 @@
                 <div class="post-heading">
                     <div class="tags">
                         
+                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                        
+                          <a class="tag" href="/tags/#学习笔记" title="学习笔记">学习笔记</a>
+                        
                     </div>
-                    <h1></h1>
+                    <h1>js学习笔记（二）</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
-                        Posted by Aohan Wei on
-                        2016-12-29
+                        Posted by 魏傲寒 on
+                        2017-04-18
                     </span>
                 </div>
             </div>
@@ -189,7 +195,10 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                9eVjaB4a1U
+                <h2 id="第二章-在HTML中使用JavaScript"><a href="#第二章-在HTML中使用JavaScript" class="headerlink" title="第二章 在HTML中使用JavaScript"></a>第二章 在HTML中使用JavaScript</h2><h3 id="2-1-lt-script-gt-元素"><a href="#2-1-lt-script-gt-元素" class="headerlink" title="2.1 &lt;script&gt;元素"></a>2.1 &lt;script&gt;元素</h3><p>&lt;script&gt;定义了六个属性.async、charset、defer、language（已弃用）、src、type。</p>
+<p>当浏览器对&lt;script&gt;元素内部的所有代码求值完毕以前，页面中的其余内容都不会被浏览器加载或显示。</p>
+<p>与解析嵌入式JavaScript代码一样，在解析外部JavaScript文件（包括下载该文件）时，页面的处理也会暂停</p>
+
 
                 <hr>
 
@@ -199,19 +208,13 @@
                     
                     
                         <li class="next">
-                            <a href="/2016/12/28/FCC初级算法题/" data-toggle="tooltip" data-placement="top" title="FCC初级算法题">Next Post &rarr;</a>
+                            <a href="/2017/04/18/js学习笔记（一）/" data-toggle="tooltip" data-placement="top" title="js学习笔记（一）">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
 
                 
 
-                
-                <!-- disqus 评论框 start -->
-                <div class="comment">
-                    <div id="disqus_thread" class="disqus-thread"></div>
-                </div>
-                <!-- disqus 评论框 end -->
                 
 
             </div>
@@ -232,6 +235,10 @@
                     <h5><a href="/tags/">FEATURED TAGS</a></h5>
                     <div class="tags">
                        
+                          <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
+                        
+                          <a class="tag" href="/tags/#学习笔记" title="学习笔记">学习笔记</a>
+                        
                     </div>
                 </section>
                 
@@ -247,13 +254,9 @@
                     
                         <li><a href="http://huangxuan.me" target="_blank">Hux Blog</a></li>
                     
-                        <li><a href="#" target="_blank">Foo</a></li>
-                    
-                        <li><a href="#" target="_blank">Bar</a></li>
-                    
-                        <li><a href="#" target="_blank">Example Friends</a></li>
-                    
                         <li><a href="#" target="_blank">It helps SEO</a></li>
+                    
+                        <li><a href="http://www.fisnew.me" target="_blank">小强哥</a></li>
                     
                 </ul>
                 
@@ -265,21 +268,6 @@
 
 
 
-
-<!-- disqus 公共JS代码 start (一个网页只需插入一次) -->
-<script type="text/javascript">
-    /* * * CONFIGURATION VARIABLES * * */
-    var disqus_shortname = "hexo-theme-huxblog";
-    var disqus_identifier = "http://weiaohan.github.io/2016/12/29/baidu_verify_9eVjaB4a1U/";
-    var disqus_url = "http://weiaohan.github.io/2016/12/29/baidu_verify_9eVjaB4a1U/";
-
-    (function() {
-        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-    })();
-</script>
-<!-- disqus 公共JS代码 end -->
 
 
 
@@ -386,13 +374,13 @@
 
                 </ul>
                 <p class="copyright text-muted">
-                    Copyright &copy; Wei Aohan&#39;s Blog 2016 
+                    Copyright &copy; Wei Aohan&#39;s Blog 2017
                     <br>
-                    Theme by <a href="http://huangxuan.me">Hux</a> 
+                    Theme by <a href="http://huangxuan.me">Hux</a>
                     <span style="display: inline-block; margin: 0 5px;">
                         <i class="fa fa-heart"></i>
-                    </span> 
-                    Ported by <a href="http://blog.kaijun.rocks">Kaijun</a> | 
+                    </span>
+                    Ported by <a href="http://blog.kaijun.rocks">Kaijun</a> |
                     <iframe
                         style="margin-left: 2px; margin-bottom:-5px;"
                         frameborder="0" scrolling="0" width="91px" height="20px"
@@ -426,14 +414,14 @@
     }
 </script>
 
-<!-- 
-     Because of the native support for backtick-style fenced code blocks 
-     right within the Markdown is landed in Github Pages, 
-     From V1.6, There is no need for Highlight.js, 
+<!--
+     Because of the native support for backtick-style fenced code blocks
+     right within the Markdown is landed in Github Pages,
+     From V1.6, There is no need for Highlight.js,
      so Huxblog drops it officially.
 
-     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0  
-     - https://help.github.com/articles/creating-and-highlighting-code-blocks/    
+     - https://github.com/blog/2100-github-pages-now-faster-and-simpler-with-jekyll-3-0
+     - https://help.github.com/articles/creating-and-highlighting-code-blocks/
 -->
 <!--
     <script>
@@ -449,7 +437,7 @@
 <script>
     // only load tagcloud.js in tag.html
     if($('#tag_cloud').length !== 0){
-        async("http://weiaohan.github.io/js/jquery.tagcloud.js",function(){
+        async("http://weiaohan.top/js/jquery.tagcloud.js",function(){
             $.fn.tagcloud.defaults = {
                 //size: {start: 1, end: 1, unit: 'em'},
                 color: {start: '#bbbbee', end: '#0085a1'},
@@ -509,11 +497,25 @@
 <!-- Side Catalog -->
 
 
+<script>
+(function(){
+    var bp = document.createElement('script');
+    var curProtocol = window.location.protocol.split(':')[0];
+    if (curProtocol === 'https') {
+        bp.src = 'https://zz.bdstatic.com/linksubmit/push.js';
+    }
+    else {
+        bp.src = 'http://push.zhanzhang.baidu.com/push.js';
+    }
+    var s = document.getElementsByTagName("script")[0];
+    s.parentNode.insertBefore(bp, s);
+})();
+</script>
 
 
 
 <!-- Image to hack wechat -->
-<img src="http://weiaohan.github.io/img/icon_wechat.png" width="0" height="0" />
+<img src="http://weiaohan.top/img/icon_wechat.png" width="0" height="0" />
 <!-- Migrate from head to bottom, no longer block render and still work -->
 
 </body>
