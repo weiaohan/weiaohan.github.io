@@ -15,11 +15,11 @@
 
     <title>
         
-          js学习笔记（三） - 魏傲寒的博客 | Wei Aohan&#39;s Blog
+          js学习笔记（四） - 魏傲寒的博客 | Wei Aohan&#39;s Blog
         
     </title>
 
-    <link rel="canonical" href="http://weiaohan.top/2017/04/18/js学习笔记（三）/">
+    <link rel="canonical" href="http://weiaohan.top/2017/04/19/js学习笔记（四）/">
 
     <!-- Bootstrap Core CSS -->
     <link rel="stylesheet" href="/css/bootstrap.min.css">
@@ -175,11 +175,11 @@
                           <a class="tag" href="/tags/#JavaScript" title="JavaScript">JavaScript</a>
                         
                     </div>
-                    <h1>js学习笔记（三）</h1>
+                    <h1>js学习笔记（四）</h1>
                     <h2 class="subheading"></h2>
                     <span class="meta">
                         Posted by 魏傲寒 on
-                        2017-04-18
+                        2017-04-19
                     </span>
                 </div>
             </div>
@@ -198,58 +198,36 @@
                 col-md-10 col-md-offset-1
                 post-container">
 
-                <h2 id="第三章-基本概念"><a href="#第三章-基本概念" class="headerlink" title="第三章 基本概念"></a>第三章 基本概念</h2><h3 id="3-1-语法"><a href="#3-1-语法" class="headerlink" title="3.1 语法"></a>3.1 语法</h3><h4 id="3-1-1-区分大小写"><a href="#3-1-1-区分大小写" class="headerlink" title="3.1.1 区分大小写"></a>3.1.1 区分大小写</h4><p>ECMAScript中的一切都区分大小写。函数名不能使用typeof，但能使用typeOf。</p>
-<h4 id="3-1-2-标识符"><a href="#3-1-2-标识符" class="headerlink" title="3.1.2 标识符"></a>3.1.2 标识符</h4><ul>
-<li>第一个字符必须是一个字母、下划线或一个美元符号。</li>
-<li>其他字符可以是字母、下划线、美元符号或数字。</li>
-</ul>
-<p>采用驼峰大小写格式</p>
-<p><em>不能使用关键字用作标识符</em></p>
-<h4 id="3-1-3-注释"><a href="#3-1-3-注释" class="headerlink" title="3.1.3 注释"></a>3.1.3 注释</h4><blockquote>
-<p>//单行注释</p>
-<p>/*</p>
-<p>这是一个多行注释</p>
-<p>*/</p>
-</blockquote>
-<h4 id="3-1-4-严格模式"><a href="#3-1-4-严格模式" class="headerlink" title="3.1.4 严格模式"></a>3.1.4 严格模式</h4><p>在严格模式下，ECMAScript3中的一些不确定的行为将得到处理，而且对某些不安全的操作也会抛出错误。在整个脚本启用严格模式，在顶部添加：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div></pre></td><td class="code"><pre><div class="line"><span class="meta">"use strict"</span></div></pre></td></tr></table></figure></p>
-<p>在函数内部上方包含这条编译指示，也可以指定函数在严格模式下执行：<br><figure class="highlight javascript"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="function"><span class="keyword">function</span> <span class="title">doSomeThing</span>(<span class="params"></span>)</span>&#123;</div><div class="line"><span class="meta">  "use strict"</span></div><div class="line">  <span class="comment">//函数体</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="3-1-5-语句"><a href="#3-1-5-语句" class="headerlink" title="3.1.5 语句"></a>3.1.5 语句</h4><p><strong>语句以分号结尾。</strong></p>
-<p>在控制语句中使用代码块</p>
-<h3 id="3-2-关键字和保留字"><a href="#3-2-关键字和保留字" class="headerlink" title="3.2 关键字和保留字"></a>3.2 关键字和保留字</h3><h3 id="3-3-变量"><a href="#3-3-变量" class="headerlink" title="3.3 变量"></a>3.3 变量</h3><p>ECMAScript的变量是松散类型的，即可以用来保存任何类型的数据。</p>
-<blockquote>
-<p>var message</p>
-</blockquote>
-<p>像这种未经过初始化的变量，会保存一个特殊的值——undefined。</p>
-<p>可以在修改变量的值同时修改变量的类型，但不推荐。</p>
-<p><strong>用var操作符定义的变量将成为定义该变量的作用域中的局部变量，也可以省略var操作符，就成了全局变量，但不推荐这样做。</strong></p>
-<p>一条语句定义多个变量：<br><figure class="highlight nix"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">var <span class="attr">message</span> = <span class="string">"hi"</span>,</div><div class="line">    <span class="attr">found</span> = <span class="literal">false</span>,</div><div class="line">    <span class="attr">age</span> = <span class="number">29</span>;</div></pre></td></tr></table></figure></p>
-<h3 id="3-4-数据类型"><a href="#3-4-数据类型" class="headerlink" title="3.4 数据类型"></a>3.4 数据类型</h3><p>ECMAScript中有5种简单数据类型（也称基本数据类型）：Undefined、Null、Boolean、Number和String。还有一种复杂数据类型——Object，Object本质上是由一组无序的名值对组成的。</p>
-<h4 id="3-4-2-Undefined类型"><a href="#3-4-2-Undefined类型" class="headerlink" title="3.4.2 Undefined类型"></a>3.4.2 Undefined类型</h4><p>对未初始化和未声明的变量执行typeof都会返回undefined。</p>
-<h4 id="3-4-3-Null类型"><a href="#3-4-3-Null类型" class="headerlink" title="3.4.3 Null类型"></a>3.4.3 Null类型</h4><p>null值表示一个空对象指针，所以用typeof操作符检测null值回返回“Object”。</p>
-<p>如果定义的变量准备在将来用于保存对象，那么最好将变量初始化为null。</p>
-<p>ECMAScript规定：<br><code>alert(null == undefined);    //true</code></p>
-<h4 id="3-4-4-Boolean类型"><a href="#3-4-4-Boolean类型" class="headerlink" title="3.4.4 Boolean类型"></a>3.4.4 Boolean类型</h4><p>ECMAScript中所有类型的值都有与这true和false等价的值，通过调用转型函数Boolean()。P26有各种数据类型及其对应的转换规则。</p>
-<p>这些规则对理解控制流语句自动执行相应的Boolean转换非常重要。<br><figure class="highlight cmake"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">var <span class="keyword">message</span> = <span class="string">"Hello World!"</span>;</div><div class="line"><span class="keyword">if</span>(<span class="keyword">message</span>)&#123;</div><div class="line">  alert(<span class="string">"Value is true"</span>);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<h4 id="3-4-5-Number类型"><a href="#3-4-5-Number类型" class="headerlink" title="3.4.5 Number类型"></a>3.4.5 Number类型</h4><p>定义八进制字面值的第一位必须是零（0），然后是八进制 数字序号（0~7）。如果字面值中的数值超出了范围，那么前导零将被忽略，后面的数值将被当做十进制数值解析。</p>
-<p>八进制字面量在严格模式下是无效的。</p>
-<p>十六进制前两位必须是0x，后跟十六进制数字，字母A~F可以大写也可以小写。</p>
-<p>进行算术计算时，都会被转换为十进制数值。</p>
-<p><em>1、浮点数值</em></p>
-<p>浮点数数值计算会产生舍入误差，如0.1+0.2 = 0.30000000000000004，但0.15+0.05 = 0.3或者0.05+0.25 = 0.3，所以：<br><figure class="highlight gcode"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="keyword">if</span><span class="comment">(a + b = 0.3)</span>&#123;</div><div class="line">  alert<span class="comment">("you got 0.3!")</span>;    <span class="comment">//不要做这样的测试！</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
-<p><em>2、数值范围</em></p>
-<p>ECMAScript能够表示的最小数值保存在Number.MIN_VALUE,最大数值保存在Number.MAX_VALUE。</p>
-<p>如果某次计算结果超出了JavaScript数值范围的值，将被自动转换为特殊的Infinity值（分正负）。Infinity值无法继续参与下一次值得计算。</p>
-<p>使用isFinite（）函数判断是否会在最大最小值之间，是的话返回true。</p>
-<p><em>3、NaN</em></p>
-<p>NaN,即非数值（Not a Number），这个数值用于表示一个本来要返回数值的操作数未返回数值的情况（这样就不会抛出错误了）。</p>
-<p>NaN的两个特点：</p>
+                <h4 id="3-4-6-String类型"><a href="#3-4-6-String类型" class="headerlink" title="3.4.6 String类型"></a>3.4.6 String类型</h4><p><em>1、字符字面量</em></p>
+<p>也叫转义序列。</p>
+<p><em>2、字符串的特点</em></p>
+<p><strong>字符串是不可变的，要改变某个变量保存的字符串，首先要销毁原来的字符串，然后再用另一个包含新值的字符串填充该变量。</strong></p>
+<p><em>3、转换为字符串</em></p>
 <ul>
-<li>任何涉及NaN的操作都会返回NaN。</li>
-<li>NaN与任何值都不相等，包括NaN本身。</li>
+<li><p>toString（）,null和Undefined值没有这个方法，有一个参数：输出数值的基数，输出有效进制格式表示的字符串值。</p>
+</li>
+<li><p>String（），能够将任何类型的值转换为字符串。</p>
+</li>
 </ul>
-<p>isNaN()函数，若是数值返回false，不是数值返回true。</p>
-<p><em>4、数值转换</em></p>
-<p>Number（）、parseInt（string，进制）、parseFloat（）（只能解析十进制，所以没有第二个参数）。后两个更常用。</p>
+<h4 id="3-4-7-Object类型"><a href="#3-4-7-Object类型" class="headerlink" title="3.4.7 Object类型"></a>3.4.7 Object类型</h4><p>创建Object类型的实例并为其添加属性和（或）方法，就可以创建自定义对象。</p>
+<p><strong>Object类型是所有它的实例的基础。换句话说：Object类型所具有的任何属性和方法也同样存在于更具体的对象中。</strong></p>
+<p>Object的每个实例都具有下列属性和方法：</p>
+<ul>
+<li><p><strong>constructor</strong>：保存着用于创建当前对象的函数。</p>
+</li>
+<li><p><strong>hasOwnProperty(<em>propertyName</em>)</strong>:用于检查给定的属性在当前对象实例中（而不是实例的原型中）是否存在。，参数必须以字符串形式指定。</p>
+</li>
+<li><p><strong>isPropertyOf(<em>object</em>)</strong>:用以检查传入的对象是否是当前对象的原型。</p>
+</li>
+<li><p><strong>propertyIsEnumerable(<em>propertyName</em>)</strong>:用于检查给定的属性是否能够使用for-in语句来枚举。</p>
+</li>
+<li><p><strong>toLocaleString()</strong>:返回对象的字符串表示，该字符串与执行环境的地区对应。</p>
+</li>
+<li><p><strong>toString()</strong>:返回对象的字符串表示。</p>
+</li>
+<li><p><strong>valueOf()</strong>:返回对象的字符串、数值或布尔值表示。 通常与toString()方法的返回值相同。</p>
+</li>
+</ul>
 
 
                 <hr>
@@ -258,13 +236,9 @@
 
                 <ul class="pager">
                     
-                        <li class="previous">
-                            <a href="/2017/04/19/js学习笔记（四）/" data-toggle="tooltip" data-placement="top" title="js学习笔记（四）">&larr; Previous Post</a>
-                        </li>
-                    
                     
                         <li class="next">
-                            <a href="/2017/04/18/js学习笔记（二）/" data-toggle="tooltip" data-placement="top" title="js学习笔记（二）">Next Post &rarr;</a>
+                            <a href="/2017/04/18/js学习笔记（三）/" data-toggle="tooltip" data-placement="top" title="js学习笔记（三）">Next Post &rarr;</a>
                         </li>
                     
                 </ul>
@@ -335,8 +309,8 @@
 <script type="text/javascript">
     /* * * CONFIGURATION VARIABLES * * */
     var disqus_shortname = "hexo-theme-huxblog";
-    var disqus_identifier = "http://weiaohan.top/2017/04/18/js学习笔记（三）/";
-    var disqus_url = "http://weiaohan.top/2017/04/18/js学习笔记（三）/";
+    var disqus_identifier = "http://weiaohan.top/2017/04/19/js学习笔记（四）/";
+    var disqus_url = "http://weiaohan.top/2017/04/19/js学习笔记（四）/";
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
